@@ -1,0 +1,25 @@
+﻿@model MvcKutuphane.Models.Entity.TBLPERSONEL
+@{
+    ViewBag.Title = "PersonelGetir";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>PersonelGetir</h2>
+
+<br />
+@using (Html.BeginForm("PersonelGuncelle", "Personeller", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(k => k.ID)
+        @Html.TextBoxFor(k => k.ID, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(k => k.PERSONEL)  <label>ADI</label>&nbsp <label>SOYADI</label>
+        @Html.TextBoxFor(k => k.PERSONEL, new { @class = "form-control" })
+    </div>
+    <div>
+        <br />
+        <button class="btn btn-warning">GÜNCELLE</button>
+    </div>
+
+
+}

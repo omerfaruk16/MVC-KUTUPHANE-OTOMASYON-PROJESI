@@ -1,0 +1,42 @@
+﻿@model MvcKutuphane.Models.Entity.TBLDUYURULAR
+@{
+    ViewBag.Title = "YeniDuyuru";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+<br />
+<h2 style="text-align:center">YENİ DUYURU EKLEME SAYFASI</h2>
+<br />
+
+<br />
+<form class="form-group" method="post">
+    <div>
+        <label class="font-weight-bolder" style="font-weight:bolder">DUYURU KATEGORİSİ</label>
+
+        @Html.TextBoxFor(x => x.KATEGORI, new { @class = "form-control" })
+
+    </div>
+
+    <br />
+    <div>
+        <label class="font-weight-bolder" style="font-weight:bolder">DUYURU İÇERİĞİ</label>
+
+        @Html.TextBoxFor(x => x.ICERIK, new { @class = "form-control" })
+
+    </div>
+
+    <br />
+    <div>
+        <label class="font-weight-bolder" style="font-weight:bolder">DUYURU TARİHİ</label>
+
+        @Html.TextBoxFor(x => x.TARIH, new { @class = "form-control" })
+
+    </div>
+
+    <br />
+
+    <div style="margin-top:15px">
+        <button class="btn btn-info" id="Btn1">DUYURU EKLE</button>
+    </div>
+</form>
+
+

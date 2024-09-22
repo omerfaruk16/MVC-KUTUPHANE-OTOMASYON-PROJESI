@@ -1,0 +1,46 @@
+﻿@model MvcKutuphane.Models.Entity.TBLKITAP
+@{
+    ViewBag.Title = "KitapGetir";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<br />
+<h2>Kitap Getir</h2>
+
+
+@using (Html.BeginForm("KitapGuncelle", "Kitap", FormMethod.Post))
+{
+    <div class="form-group">
+        <br />
+        <label>KİTAP ID</label>
+        @Html.TextBoxFor(k => k.ID, new { @class = "Form-control" })
+        <br />
+        <label>YAZAR AD</label>
+        @Html.TextBoxFor(k => k.AD, new { @class = "Form-control" })
+        <br />
+        <label>KATEGORİ</label>
+        @Html.DropDownListFor(k => k.TBLKATEGORI.ID, (List<SelectListItem>)ViewBag.dgr1,
+       new { @class = "form-control" })
+        <br />
+        <label>YAZAR</label>
+        @Html.DropDownListFor(k => k.TBLYAZAR.ID, (List<SelectListItem>)ViewBag.dgr2,
+       new { @class = "form-control" })
+        <br />
+        <label>BASIM YILI</label>
+        @Html.TextBoxFor(k => k.BASIMYIL, new { @class = "Form-control" })
+        <br />
+        <label>YAYINEVİ</label>
+        @Html.TextBoxFor(k => k.YAYINEVI, new { @class = "Form-control" })
+        <br />
+        <label>SAYFA</label>
+        @Html.TextBoxFor(k => k.SAYFA, new { @class = "Form-control" })
+        <br />
+
+    </div>
+
+    <button class="btn btn-warning">KİTAP BİLGİLERİNİ GÜNCELLE</button>
+    <input type="hidden" name="Durum" value="True" />
+}
+
+
+

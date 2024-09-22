@@ -1,0 +1,53 @@
+﻿@using MvcKutuphane.Models.Entity
+@using PagedList
+@using PagedList.Mvc
+@model PagedList.IPagedList<TBLUYELER>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<br />
+<h2 class="text-xl-center ">ÜYELER</h2>
+
+
+<table class="table table-bordered" style="text-align:center;position:relative" >
+    <tr style="background-color:rgb(252, 178, 22)">
+        <th class="text-center">ÜYE ID</th>
+        <th class="text-center">ÜYE ADI</th>
+        <th class="text-center">ÜYE SOYADI</th>
+        <th class="text-center">MAİL</th>
+        <th class="text-center">KULLANICI ADI</th>
+        <th class="text-center">ŞİFRE</th>
+        <th class="text-center">TELEFON</th>
+        <th class="text-center">OKUL</th>
+        <th class="text-center">SİL</th>
+        <th class="text-center">GÜNCELLE</th>
+        <th class="text-center">ÜYE KİTAP GEÇMİŞİ</th>
+    </tr>
+    @foreach (var uye in Model)
+    {
+        <tr>
+            <td>@uye.ID</td>
+            <td>@uye.AD</td>
+            <td>@uye.SOYAD</td>
+            <td>@uye.MAIL</td>
+            <td>@uye.KULLANICIADI</td>
+            <td>@uye.SIFRE</td>
+            <td>@uye.TELEFON</td>
+            <td>@uye.OKUL</td>
+            <td class="text-center"><a href="/Uye/UyeSil/@uye.ID" class="btn btn-danger">SİL</a></td>
+            <td class="text-center"><a href="/Uye/UyeGetir/@uye.ID" class="btn btn-success">GÜNCELLE</a></td>
+            <td class="text-center" style="position:center"><a href="/Uye/UyeKitapGecmis/@uye.ID" class="btn btn-default" style="background-color:deepskyblue; color:white">KİTAP GEÇMİŞİ</a></td>
+        </tr>
+    }
+
+</table>
+@Html.PagedListPager((IPagedList)Model, sayfa => Url.Action("Index", new { sayfa }), 
+    new PagedListRenderOptions
+{
+        LiElementClasses = new List<string>
+        {"page-link"}
+})
+
+<a href="/Uye/UyeEkle" class="btn btn-primary">YENİ ÜYE EKLE</a>

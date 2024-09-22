@@ -1,0 +1,73 @@
+﻿@using MvcKutuphane.Models.Entity;
+@model List<TBLDUYURULAR>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+    string renk = "";
+}
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+
+<br />
+<h2 class="text-xl-center">DUYURULAR</h2>
+<table class="table table-bordered" style="text-align:center">
+    <tr style="background-color:rgb(252, 178, 22)">
+        <th class="text-center">DUYURU NO</th>
+        <th class="text-center">KATEGORİ</th>
+        <th class="text-center">TARİH</th>
+
+
+        <th class="text-center">SİL</th>
+        <th class="text-center">DETAY</th>
+
+    </tr>
+    @foreach (var prs in Model)
+    {
+
+        if (prs.KATEGORI == "YENİKİTAP")
+        {
+            renk = "bg-info text-white";
+        }
+
+
+        if(prs.KATEGORI == "RESMİ TATİL")
+        {
+            renk = "bg-light text-dark";
+        }
+
+        if (prs.KATEGORI == "İLETİŞİM")
+        {
+            renk = "bg-dark text-white";
+        }
+
+        if (prs.KATEGORI == "KİTAPLARI GECİKTİRMEYİN ")
+        {
+            renk = "bg-success text-white";
+        }
+
+        if (prs.KATEGORI == "BAĞIŞ")
+        {
+            renk = "bg-primary text-white";
+        }
+
+
+
+        <tr class="@renk">
+            <td>@prs.ID</td>
+            <td>@prs.KATEGORI</td>
+            <td>@Convert.ToDateTime(prs.TARIH).ToString("dd/MM/yyyy")</td>
+
+            <td class="text-center"><a href="/Duyuru/DuyuruSil/@prs.ID" class="btn btn-danger">SİL</a></td>
+            <td class="text-center"><a href="/Duyuru/DuyuruDetay/@prs.ID" class="btn btn-default" style="background-color:lightcyan; color:black">DETAYLAR</a></td>
+        </tr>
+    }
+
+</table>
+<a href="/Duyuru/YeniDuyuru" class="btn btn-primary">DUYURU EKLE</a>
+

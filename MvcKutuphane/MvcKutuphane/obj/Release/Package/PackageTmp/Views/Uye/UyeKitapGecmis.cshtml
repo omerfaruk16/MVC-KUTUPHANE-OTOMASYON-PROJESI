@@ -1,0 +1,30 @@
+﻿@using MvcKutuphane.Models.Entity
+
+@{
+    ViewBag.Title = "UyeKitapGecmis";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+<br />
+<h2 style="text-align:center">ÜYE:@ViewBag.u1</h2>
+<br />
+<table class="table table-bordered" style="text-align:center">
+   <tr>
+       <th>KİTAP ADI</th>
+       <th>PERSONEL</th>
+       <th>ALIŞ TARİHİ</th>
+       <th>İADE TARİHİ</th>
+       
+   </tr>
+
+    @foreach(var x in Model)
+            {
+                <tr>
+                    <td>@x.TBLKITAP.AD</td>
+                    <td>@x.TBLPERSONEL.PERSONEL</td>
+                    <td>@Convert.ToDateTime(x.ALISTARIH).ToString("dd/MM/yyyy")</td>
+                    <td>@Convert.ToDateTime(x.UYEGETIRTARIH).ToString("dd/MM/yyyy")</td>
+                </tr>
+            }
+
+
+</table>

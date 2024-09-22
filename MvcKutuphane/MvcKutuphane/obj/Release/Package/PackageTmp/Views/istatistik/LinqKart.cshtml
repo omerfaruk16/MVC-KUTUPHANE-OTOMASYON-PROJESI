@@ -1,0 +1,250 @@
+﻿
+@{
+    ViewBag.Title = "LinqKart";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<br />
+<br />
+<h2 style="text-align:center">İSTATİSTİK KARTLARI</h2>
+<link href="~/web3/css/style_grid.css" rel="stylesheet" />
+<link href="~/web3/css/table-style.css" rel="stylesheet" />
+<link href="~/web3/css/bootstrap.css" rel="stylesheet" />
+<link href="~/web3/css/style.css" rel="stylesheet" />
+<link href="~/web3/css/basictable.css" rel="stylesheet" />
+<link href="~/web3/css/component.css" rel="stylesheet" />
+<link href="~/web3/css/export.css" rel="stylesheet" />
+<link href="~/web3/css/flipclock.css" rel="stylesheet" />
+<link href="~/web3/css/font-awesome.css" rel="stylesheet" />
+<link href="~/web3/css/jQuery-plugin-progressbar1.css" rel="stylesheet" />
+<link href="~/web3/css/monthly.css" rel="stylesheet" />
+
+
+<!DOCTYPE html>
+<html lang="zxx">
+<head>
+    
+
+    <!-- font-awesome-icons -->
+    <link href="css/font-awesome.css" rel="stylesheet">
+    <!-- //font-awesome-icons -->
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800" rel="stylesheet">
+</head>
+<body>
+   
+        <div class="clearfix"></div>
+        <!-- //w3_agileits_top_nav-->
+        <!-- /inner_content-->
+        <div class="inner_content">
+            <!-- /inner_content_w3_agile_info-->
+            <div class="inner_content_w3_agile_info">
+                <!-- /agile_top_w3_grids-->
+                <div class="agile_top_w3_grids">
+                    <ul class="ca-menu">
+                        <li>
+                            <a href="#">
+
+                                <i class="fa fa-book" aria-hidden="true"></i>
+                                <div class="ca-content">
+                                    <h4 class="ca-main">@ViewBag.dgr1</h4>
+                                    <h3 class="ca-sub">Toplam Kitap Sayımız</h3>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-users" aria-hidden="true"></i>
+                                <div class="ca-content">
+                                    <h4 class="ca-main one">@ViewBag.dgr2</h4>
+                                    <h3 class="ca-sub one">Toplam Üye Sayımız</h3>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-money" aria-hidden="true"></i>
+                                <div class="ca-content">
+                                    <h4 class="ca-main two">@ViewBag.dgr3</h4>
+                                    <h3 class="ca-sub two">Kasadaki Toplam Tutar</h3>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-bookmark" aria-hidden="true"></i>
+                                <div class="ca-content">
+                                    <h4 class="ca-main three">@ViewBag.dgr4</h4>
+                                    <h3 class="ca-sub three">Ödünçteki Kitap Sayısı</h3>
+                                </div>
+                            </a>
+                        </li>
+
+
+                        <li>
+                            <a href="#">
+
+                                <i class="fa fa-list" aria-hidden="true"></i>
+                                <div class="ca-content">
+                                    <h4 class="ca-main">@ViewBag.dgr5</h4>
+                                    <h3 class="ca-sub">Toplam Kategori Sayısı</h3>
+                                </div>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-user" aria-hidden="true"></i>
+                                <div class="ca-content">
+                                    <h4 class="ca-main one">ÖMER FARUK GÖDEL</h4>
+                                    <h3 class="ca-sub one">En Aktif Üye</h3>
+                                </div>
+                            </a>
+                        </li>
+
+
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-book" aria-hidden="true"></i>
+                                <div class="ca-content">
+                                    <h4 class="ca-main two">Da Vinci Şifresi</h4>
+                                    <h3 class="ca-sub two">En Çok Okunan Kitap</h3>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-database" aria-hidden="true"></i>
+                                <div class="ca-content">
+                                    <h4 class="ca-main three">@ViewBag.dgr8</h4>
+                                    <h3 class="ca-sub three">En Fazla Kitabı Olan Yazar</h3>
+                                </div>
+                            </a>
+                        </li>
+
+
+
+
+                        <li>
+                            <a href="#">
+
+                                <i class="fa fa-building-o" aria-hidden="true"></i>
+                                <div class="ca-content">
+                                    <h4 class="ca-main">@ViewBag.dgr9</h4>
+                                    <h3 class="ca-sub">En İyi Yayınevi</h3>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                         
+                           
+                            <a href="#">
+                                <i class="fa fa-trophy" aria-hidden="true"></i>
+
+                                <div class="ca-content">
+
+                                    <h4 class="ca-main one">Ömer Günay</h4>
+                                    <h3 class="ca-sub one">En Başarılı Personel</h3>
+                                </div>
+
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-comments" aria-hidden="true"></i>
+                                <div class="ca-content">
+                                    <h4 class="ca-main two">@ViewBag.dgr11</h4>
+                                    <h3 class="ca-sub two">Toplam Mesaj Sayısı</h3>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-calendar" aria-hidden="true"></i>
+                                <div class="ca-content">
+                                    <h4 class="ca-main three">Seksen Günde Devrialem</h4>
+                                    <h3 class="ca-sub three">Bugünkü Emanetler</h3>
+                                </div>
+                            </a>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </ul>
+                </div>
+       
+
+    <script type="text/javascript">
+		var clock;
+
+		$(document).ready(function() {
+
+			clock = $('.clock').FlipClock({
+		        clockFace: 'HourlyCounter'
+		    });
+		});
+    </script>
+    <script src="~/web3/js/bars.js"></script>
+    <script src="~/web3/js/jquery.nicescroll.js"></script>
+    <script src="~/web3/js/scripts.js"></script>
+
+    <script type="text/javascript" src="~/web3/js/bootstrap-3.1.1.min.js"></script>
+
+
+</body>
+</html>
+
